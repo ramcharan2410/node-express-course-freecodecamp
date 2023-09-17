@@ -7,6 +7,12 @@
 // process    - info about env where the program is being executed
 
 console.log(__dirname)
+
+// This will create an infinite loop
+// setInterval(() => {
+//   console.log('hello world');
+// })
 setInterval(() => {
   console.log('hello world')
 }, 1000)
+// setTimeout() is also present in NodeJS
