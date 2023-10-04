@@ -2,12 +2,24 @@ const express = require('express')
 const app = express()
 let { people } = require('./data')
 
+// using postman application, you can test your get, put, post, etc requests responses and also what json data you are sending (OTHERWISE YOU HAVE TO BUILD FRONT-END FOR EVERY METHOD!!!)
+
 // static assets
 app.use(express.static('./methods-public'))
 // parse form data
+// http://expressjs.com/en/5x/api.html#express.urlencoded
 app.use(express.urlencoded({ extended: false }))
-// parse json
+// parse json (to handle incoming json data)
 app.use(express.json())
+
+app.post('/login', (req, res) => {
+  const { name } = req.body
+  if (name) {
+    return res.status(200).send(`Welcome ${name}`)
+  }
+
+  res.status(401).send('Please Provide Credentials')
+})
 
 app.get('/api/people', (req, res) => {
   res.status(200).json({ success: true, data: people })
@@ -33,14 +45,6 @@ app.post('/api/postman/people', (req, res) => {
   res.status(201).json({ success: true, data: [...people, name] })
 })
 
-app.post('/login', (req, res) => {
-  const { name } = req.body
-  if (name) {
-    return res.status(200).send(`Welcome ${name}`)
-  }
-
-  res.status(401).send('Please Provide Credentials')
-})
 
 app.put('/api/people/:id', (req, res) => {
   const { id } = req.params

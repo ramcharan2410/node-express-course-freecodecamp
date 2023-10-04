@@ -62,5 +62,5 @@ module.exports = {
   createPerson,
   createPersonPostman,
   updatePerson,
-  deletePerson,
+  deletePerson
 }

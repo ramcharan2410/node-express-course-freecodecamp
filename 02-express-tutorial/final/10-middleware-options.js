@@ -7,6 +7,7 @@ const authorize = require('./authorize')
 
 // app.use([logger, authorize])
 // app.use(express.static('./public'))
+// https://www.npmjs.com/package/morgan
 app.use(morgan('tiny'))
 
 app.get('/', (req, res) => {

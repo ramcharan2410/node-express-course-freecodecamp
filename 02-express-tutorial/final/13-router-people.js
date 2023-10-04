@@ -6,15 +6,17 @@ const {
   createPerson,
   createPersonPostman,
   updatePerson,
-  deletePerson,
-} = require('../controllers/people')
+  deletePerson
+} = require('./15-router-controller')
 
+// You can prefer this
 // router.get('/', getPeople)
 // router.post('/', createPerson)
 // router.post('/postman', createPersonPostman)
 // router.put('/:id', updatePerson)
 // router.delete('/:id', deletePerson)
 
+// You can also prefer this (chaining methods of same route together!!!)
 router.route('/').get(getPeople).post(createPerson)
 router.route('/postman').post(createPersonPostman)
 router.route('/:id').put(updatePerson).delete(deletePerson)

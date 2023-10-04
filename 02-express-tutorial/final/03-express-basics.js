@@ -1,3 +1,4 @@
+// https://expressjs.com/
 const express = require('express')
 const app = express()
 
@@ -23,5 +24,5 @@ app.listen(5000, () => {
 // app.put
 // app.delete
 // app.all
-// app.use
+// app.use (useful for middleware)
 // app.listen

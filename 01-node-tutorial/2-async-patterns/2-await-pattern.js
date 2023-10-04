@@ -20,7 +20,7 @@ const start = async () => {
       `THIS IS AWESOME : ${first} ${second}`,
       { flag: 'a' }
     )
-    // we can just use readFile and writeFile because they are imported from 'fs.Promises'
+    // we can just use readFile and writeFile instead of using 'util' module, because they are imported from 'fs.Promises'
     console.log(first, second)
   } catch (error) {
     console.log(error)
