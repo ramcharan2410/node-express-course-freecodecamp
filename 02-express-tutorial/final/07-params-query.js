@@ -59,7 +59,7 @@ app.get('/api/v1/query', (req, res) => {
     // res.status(200).send('no products matched your search'); (You can also do this, but most common way is done below)
     // Observe that we are not setting status code 404. (Because this is a successful response)
     return res.status(200).json({ sucess: true, data: [] })
-    // we are using return because, if not used, nodeJS also  continues to read below res.json() and it sends TWO RESPONSES which need to be avoided
+    // we are using return because, if not used, nodeJS also continues to read below res.json() and it sends TWO RESPONSES which need to be avoided
   }
   // if no queries are provided / wrong query name's are provided(example: limi for limit (or) serch for search, etc) => sortedProducts === products (All products will appear)
   res.status(200).json(sortedProducts)
